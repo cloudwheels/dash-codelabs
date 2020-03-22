@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-03-22T17:17:35Z",
+  "id": "your-first-dapp",
+  "duration": 5,
+  "title": "Your First Dash DApp",
+  "authors": "Nigel Wheeler (cloudwheels)",
+  "summary": "In this codelab, you'll build a Distributed Application, or ,DApp using the Dash Platform",
+  "source": "1OwNOnFEf7D8C9rzIuNZsj7ubxAqmv9wVvdil6c1FyYU",
+  "theme": "web",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/",
+  "url": "your-first-dapp"
+}

@@ -1,0 +1,114 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Your First Dash DApp</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="your-first-dapp"
+                  title="Your First Dash DApp"
+                  environment="web"
+                  feedback-link="https://github.com/">
+    
+      <google-codelab-step label="Introduction" duration="2">
+        <p class="image-container"><img style="width: 354.50px" src="img/8c5a36a9c2078387.jpeg"></p>
+<p><strong>Last Updated:</strong> 2020-03-22</p>
+<h2 is-upgraded><strong>What is Dash Platform?</strong></h2>
+<p>Dash Platform is built on top of the network of the leading cryptocurrency Dash, or ‘Digital Cash&#39; (dash.org) and provides the technology to create distributed, or decentralised, applications. </p>
+<h3 is-upgraded><strong>Advantages of Building DApps with Dash</strong></h3>
+<ul>
+<li><strong>Decentralized Storage</strong>. Data is stored across the network and its integrity is enforced by consensus, increasing safety and availability</li>
+<li><strong>Easy to Use Client Libraries.</strong>No need to understand blockchain infrastructure to get the benefits of cryptographic networks.</li>
+<li><strong>Instant Data Confirmation. </strong>Unlike many networks, Dash is fast.</li>
+</ul>
+<h3 is-upgraded><strong>Using &#34;Evonet&#34;- the Dash Platform Testing Environment</strong></h3>
+<p>Evonet is the initial development network provided for experimentation and evaluation of Dash Platform features, named after the project&#39;s codename, ‘Evolution&#39;.</p>
+<p>You&#39;ll be able to safely build and test your DApp without worrying about costs or making mistakes</p>
+<h2 is-upgraded><strong>What you&#39;ll build</strong></h2>
+<p>We&#39;re going to build a simple ‘hello world&#39; DApp which stores the names of registered users.</p>
+<p>.</p>
+<aside class="warning"><p><strong>Note:</strong> The Dash Platform and evonet are currently in active development.</p>
+</aside>
+<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
+<ul class="checklist">
+<li>Use the DashJS library in the browser </li>
+<li>Create and fund a test wallet, and create a Platform User Identity</li>
+<li>Create a Platform Application identity, and register a Data Contract to define a schema for the data in the application.</li>
+<li>Register Documents to add data and alter the state of the Application. </li>
+</ul>
+<aside class="special"><p><strong>Note:</strong> There&#39;s a glossary at the end of the codelab where you can find out more about terms, and links to the online documentation</p>
+</aside>
+<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
+<ul>
+<li>Some knowledge of HTML, CSS, JavaScript, and <a href="https://developer.chrome.com/devtools" target="_blank">Chrome DevTools</a>.</li>
+<li>A browser &amp; code editor: this could be a simple test editor</li>
+<li>A webserver to serve your application</li>
+</ul>
+<h2 is-upgraded><strong>Getting help</strong></h2>
+<p>As well as online documentation, there&#39;s an active community happy to help with your questions in the Dash DApp Developers Discord<br> </p>
+<p><a href="http://chat.dashdevs.org/" target="_blank"><paper-button class="colored" raised>Get An Invite Link</paper-button></a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting set up" duration="1">
+        <h2 is-upgraded><strong>Introducing the DashJS Library</strong></h2>
+<p>In this codelab We&#39;re going to using the DashJS library, which makes the Dash Platform available in the browser and provides a single entry point for all its the features.</p>
+<p>There&#39;s other ways to use access Dash Platform: on the server with Nodejs and in an increasing number of other languages such as Java, Kotlin &amp; Go. You can find out more in the references at the end of the lab.</p>
+<p>The DashJS Library also has more features than we explore in this introductory tutorial.</p>
+<p>The full API reference documentation and more examples for DashJS are available here:  <a href="https://dashevo.github.io/DashJS" target="_blank">https://dashevo.github.io/DashJS</a> </p>
+<aside class="special"><p><strong>Note:</strong> You can dig even deeper into the code for DashJS in its <a href="https://github.com/dashevo/DashJS" target="_blank">Github repository</a></p>
+</aside>
+<h3 is-upgraded><strong>Embed the DashJS Library</strong></h3>
+<p>Let&#39;s get started!</p>
+<p>Create a new file and save it as <code>index.html</code></p>
+<p>Add a script tag to include the DashJS Library.</p>
+<p><code>&lt;script src=&#34;https://unpkg.com/dash&#34;&gt;&lt;/script&gt;</code></p>
+<p>That&#39;s it! - we&#39;re ready to write some code.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create and fund a wallet" duration="2">
+        <h2 is-upgraded>Generating a mnemonic</h2>
+<p>A mnemonic is a sequence of words that can be used to generate private keys.</p>
+<p><code>hello-world.js</code></p>
+<pre><code>&lt;script&gt;
+const DashJS = require(&#34;dash&#34;);
+const sdk = new DashJS.SDK({
+  network: &#34;testnet&#34;,
+  mnemonic: null,
+});
+const mnemonic = sdk.wallet.exportWallet();
+console.log({mnemonic});
+&lt;/script&gt;</code></pre>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
